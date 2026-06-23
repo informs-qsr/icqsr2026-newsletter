@@ -722,6 +722,73 @@
     font-weight: 700;
   }
 
+  /* ============ SPONSORS ============ */
+  .sponsor-tier { margin-bottom: 28px; }
+
+  .sponsor-tier-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+  }
+
+  .sponsor-tier-amount {
+    color: var(--ink-soft);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
+  }
+
+  .sponsor-logo {
+    aspect-ratio: 3 / 2;
+    border: 1px solid var(--rule);
+    background: var(--paper-warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .sponsor-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+  .sponsor-individual {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+  }
+
+  /* ============ CREDIT ============ */
+  .footer-credit {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+  }
+
   /* ============ HIGHLIGHT (search) ============ */
   .hl-mark { background: var(--accent-soft); padding: 2px 4px; }
   .dimmed { opacity: 0.25; transition: opacity 0.2s; }
@@ -792,9 +859,10 @@
       <li><a href="#chair">Chair&rsquo;s Message</a></li>
       <li><a href="#icqsr">ICQSR 2026, Hong Kong</a></li>
       <li><a href="#informs">INFORMS Annual Meeting 2026</a></li>
-      <li><a href="#members">Member Highlights</a></li>
+      <li><a href="#committee">Brief Committee Updates</a></li>
       <li><a href="#calls">Open Calls for Papers</a></li>
       <li><a href="#connect">Stay Connected</a></li>
+      <li><a href="#sponsors">Sponsors</a></li>
     </ol>
   </aside>
 
@@ -982,114 +1050,158 @@
         </div>
       </div>
 
-      <h3>QSR Paper Competitions</h3>
-      <p>As in previous years, the QSR Section will organize three signature competitions at the Annual Meeting, with award sessions held during the QSR cluster.</p>
+      <h3>Competitions &amp; Awards</h3>
+      <p>As in previous years, the QSR Section organizes a full slate of competitions and awards at the Annual Meeting, with award sessions held during the QSR cluster and winners announced at the QSR Business Meeting. Below are this year&rsquo;s programs and the deadlines confirmed so far.</p>
 
       <div class="comp-row">
-        <div class="comp-label">Competition</div>
+        <div class="comp-label">Student Paper</div>
+        <div>
+          <div class="comp-name"><a href="https://connect.informs.org/discussion/call-for-papers-informs-2026-qsr-best-student-paper-competition">QSR Best Student Paper Competition</a></div>
+          <div class="comp-desc">Four finalists present at a special session; winner receives a plaque. Co-chairs: Bo Shen (NJIT), Cesar Ruiz Torres (U. Oklahoma), Jianxin Xie (U. Virginia). Decisions by Sep 28.</div>
+        </div>
+        <div class="deadline-badge urgent">Jul 12</div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-label">Teaching</div>
+        <div>
+          <div class="comp-name"><a href="https://connect.informs.org/discussion/call-for-nominations-informs-2026-quality-statistics-and-reliability-teaching-award">QSR Teaching Award</a></div>
+          <div class="comp-desc">Recognizes excellence in teaching quality, statistics, and reliability courses. Nominations by a colleague or student. Committee chairs: Bo Shen (NJIT), Dan Li (UW), Sahand Hajifar (Park). Winner notified Oct 2.</div>
+        </div>
+        <div class="deadline-badge soon">Aug 14</div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-label">Refereed Paper</div>
         <div>
           <div class="comp-name">QSR Best Refereed Paper Competition</div>
-          <div class="comp-desc">Open to QSR-affiliated authors. Chairs and submission details <span class="tbd">TBD</span>.</div>
+          <div class="comp-desc">Recognizes excellence among papers submitted to QSR refereed sessions. Chairs and submission deadline <span class="tbd">TBD</span>.</div>
         </div>
         <div class="deadline-badge soon">TBD</div>
       </div>
 
       <div class="comp-row">
-        <div class="comp-label">Competition</div>
-        <div>
-          <div class="comp-name">QSR Best Student Paper Competition</div>
-          <div class="comp-desc">For student-led research. Finalists present at a special session during the Annual Meeting.</div>
-        </div>
-        <div class="deadline-badge soon">TBD</div>
-      </div>
-
-      <div class="comp-row">
-        <div class="comp-label">Competition</div>
+        <div class="comp-label">Student Poster</div>
         <div>
           <div class="comp-name">QSR Best Student Poster Competition</div>
-          <div class="comp-desc">Open to student researchers presenting posters at the Annual Meeting.</div>
+          <div class="comp-desc">For student researchers presenting posters during the Annual Meeting. Chairs and deadline <span class="tbd">TBD</span>.</div>
+        </div>
+        <div class="deadline-badge soon">TBD</div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-label">Industry Award</div>
+        <div>
+          <div class="comp-name">QSR Industry Service Award</div>
+          <div class="comp-desc">Honors outstanding QSR members in industry or non-academic organizations. Details <span class="tbd">TBD</span>.</div>
         </div>
         <div class="deadline-badge soon">TBD</div>
       </div>
 
       <div class="tbd-block">
-        Items to confirm with QSR Council (Conference Subcommittee, Hao Yan) closer to the deadline:<br>
-        — Competition chair names and submission emails for each competition<br>
-        — Submission deadlines<br>
-        — Confirmed QSR cluster session count and any special panels<br>
-        — Business meeting room and time
+        Items to confirm with the QSR Conference Subcommittee closer to the meeting:<br>
+        &mdash; Chair names, submission emails, and deadlines for the Refereed Paper &amp; Student Poster competitions<br>
+        &mdash; Industry Service Award timeline and any Data/Analytics Challenge for 2026<br>
+        &mdash; Confirmed QSR cluster session count and special panels<br>
+        &mdash; Business meeting room and time
       </div>
 
       <p style="font-size: 14px; color: var(--ink-soft); font-style: italic; margin-top: 24px;">Conference details and registration at <a class="inline-link" href="https://meetings.informs.org/wordpress/annual/">meetings.informs.org/annual</a>.</p>
     </section>
 
-    <!-- ============ §4 MEMBER HIGHLIGHTS ============ -->
-    <section id="members">
-      <div class="section-num">§ 04 &mdash; Community</div>
-      <h2>Member <em>highlights</em></h2>
+    <!-- ============ §4 BRIEF COMMITTEE UPDATES ============ -->
+    <section id="committee">
+      <div class="section-num">§ 04 &mdash; Section governance</div>
+      <h2>Brief <em>committee updates</em></h2>
 
-      <p class="lede">Selected honors, awards, and milestones from QSR members over the past year.</p>
+      <p class="lede">A snapshot of the people steering the QSR Section &mdash; the Council and Board leadership, and the subcommittees that run our programs, awards, webinars, and outreach.</p>
 
-      <h3>Honors &amp; awards</h3>
-      <div>
-        <div class="highlight-item">
-          <span class="highlight-name">Juan Du</span><span class="highlight-aff">HKUST Guangzhou</span>
-          <div class="highlight-desc">2025 Dr. Hamed K. Eldin Outstanding Early Career IE in Academia Award · 2025 ASQ Feigenbaum Medal.</div>
+      <h3>QSR Council &amp; Board</h3>
+      <p>The QSR Section is led by its elected officers and supported by an Advisory Board of senior leaders in quality, statistics, and reliability. Roles below reflect the current leadership; full roster and headshots to be confirmed.</p>
+
+      <div class="keynote-grid">
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo">
+            <img src="board-chair.jpg" alt="QSR Chair" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="keynote-mini-name">Hao Yan</div>
+            <div class="keynote-mini-aff">Chair<br>Arizona State Univ.</div>
+          </div>
         </div>
-        <div class="highlight-item">
-          <span class="highlight-name">Young Myoung Ko</span><span class="highlight-aff">POSTECH</span>
-          <div class="highlight-desc">IISE Transactions Service Award (June 2025) · Appointed Department Head, Industrial and Management Engineering, POSTECH.</div>
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo">
+            <img src="board-chair-elect.jpg" alt="QSR Chair-Elect" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="keynote-mini-name">Name TBD</div>
+            <div class="keynote-mini-aff">Chair-Elect<br>Affiliation TBD</div>
+          </div>
         </div>
-        <div class="highlight-item">
-          <span class="highlight-name">Shancong Mou</span><span class="highlight-aff">U. Minnesota</span>
-          <div class="highlight-desc">Sigma Xi Best Ph.D. Thesis Award, Georgia Institute of Technology, 2025.</div>
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo">
+            <img src="board-secretary.jpg" alt="QSR Secretary/Treasurer" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="keynote-mini-name">Xiaochen Xian</div>
+            <div class="keynote-mini-aff">Secretary / Treasurer<br>Georgia Tech</div>
+          </div>
         </div>
-        <div class="highlight-item">
-          <span class="highlight-name">Congjing Zhang</span><span class="highlight-aff">U. Washington</span>
-          <div class="highlight-desc">Amazon AI Ph.D. Fellowship.</div>
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo">
+            <img src="board-past-chair.jpg" alt="QSR Past Chair" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="keynote-mini-name">Hongyue Sun</div>
+            <div class="keynote-mini-aff">Immediate Past Chair<br>Univ. of Georgia</div>
+          </div>
         </div>
-        <div class="highlight-item">
-          <span class="highlight-name">Yifeng Wang</span><span class="highlight-aff">Georgia Tech</span>
-          <div class="highlight-desc">Runner-up, 2024 INFORMS QSR Best Student Poster · 2025 ASA SPES+Q&amp;P Student Paper Award · 2025 Novelis Graduate Scholar.</div>
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo">
+            <img src="board-advisory-chair.jpg" alt="Advisory Board Chair" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="keynote-mini-name">Elsayed A. Elsayed</div>
+            <div class="keynote-mini-aff">Advisory Board Chair<br>Rutgers University</div>
+          </div>
         </div>
       </div>
 
-      <h3>New PhDs &amp; placements</h3>
+      <div class="tbd-block">
+        Confirm with the QSR Council: the full 2025&ndash;2026 officer and Council roster (Chair-Elect, newly elected Council members), official names and affiliations, and headshot images to replace each photo placeholder above.
+      </div>
+
+      <h3>Subcommittee updates</h3>
+      <p>Across the year, QSR&rsquo;s subcommittees organize the conference cluster, fundraising, membership growth, webinars, outreach, and communications. Detailed activity reports for this year are pending and will be requested from each subcommittee chair.</p>
+
       <div>
         <div class="highlight-item">
-          <span class="highlight-name">Feng Ye</span> &mdash; PhD from Rutgers (advisor: Ahmed Aziz Ezzat). Joined Clemson University as Tenure-Track Assistant Professor.
+          <span class="highlight-name">Conference Subcommittee</span><span class="highlight-aff">Update pending</span>
+          <div class="highlight-desc">Plans the INFORMS QSR cluster, competitions, special sessions, and the business meeting &amp; reception.</div>
         </div>
         <div class="highlight-item">
-          <span class="highlight-name">Samar Saleh</span> &mdash; PhD from Rutgers (advisor: Weihong Grace Guo). Joined James Madison University as Assistant Professor.
+          <span class="highlight-name">Fundraising Subcommittee</span><span class="highlight-aff">Update pending</span>
+          <div class="highlight-desc">Leads sponsorship outreach for the Annual Meeting and ICQSR, sponsor acknowledgments, and the complimentary-membership initiative.</div>
         </div>
         <div class="highlight-item">
-          <span class="highlight-name">Yating Fang</span> &mdash; PhD from Rutgers (advisor: Ahmed Aziz Ezzat). Postdoctoral Fellow, Rutgers Data Science &amp; AI Collaborative.
+          <span class="highlight-name">Membership Growth Subcommittee</span><span class="highlight-aff">Update pending</span>
+          <div class="highlight-desc">Promotes member achievements, runs the &ldquo;Member Recruit Member&rdquo; activity, and features members across academia and industry.</div>
         </div>
         <div class="highlight-item">
-          <span class="highlight-name">Ye Kwon Huh</span> &mdash; PhD from U. Wisconsin–Madison (advisor: Kaibo Liu).
+          <span class="highlight-name">Academic Subcommittee</span><span class="highlight-aff">Update pending</span>
+          <div class="highlight-desc">Organizes the QSR research webinar series (recordings on the QSR YouTube channel) and the QSR Teaching Award.</div>
         </div>
         <div class="highlight-item">
-          <span class="highlight-name">Gyeongho Kim</span> &mdash; PhD from Korea University (advisors: Sunghoon Lim &amp; Sungil Kim).
+          <span class="highlight-name">Outreach Subcommittee</span><span class="highlight-aff">Update pending</span>
+          <div class="highlight-desc">Runs the mentor&ndash;mentee program with IISE QCRE and DAIS, and supports INFORMS student chapters organizing QSR activities.</div>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-name">Public Communication Subcommittee</span><span class="highlight-aff">Update pending</span>
+          <div class="highlight-desc">Maintains the QSR website and LinkedIn page, member spotlights, surveys, and mailing-list communications.</div>
         </div>
       </div>
 
-      <h3>Selected grants</h3>
-      <div>
-        <div class="highlight-item">
-          <span class="highlight-name">Ahmed Aziz Ezzat</span> <span class="highlight-aff">Rutgers, PI</span>
-          <div class="highlight-desc">NSF Collaborative Research on data science-enabled nanomanufacturing, with Mostafa Bedewy (Pitt). $550K, 2025–2028.</div>
-        </div>
-        <div class="highlight-item">
-          <span class="highlight-name">Shancong Mou</span> <span class="highlight-aff">U. Minnesota, PI</span>
-          <div class="highlight-desc">Samsung Global Research Outreach Award. $150K, 2025.</div>
-        </div>
-        <div class="highlight-item">
-          <span class="highlight-name">Yuxin Wen</span> <span class="highlight-aff">PI</span>
-          <div class="highlight-desc">NSF ERI grant on privacy-aware system failure prediction. $199K, 2025–2027.</div>
-        </div>
-      </div>
-
-      <p style="font-size: 13px; font-style: italic; color: var(--ink-soft); margin-top: 20px;">A fuller list of member updates, grants, and PhD placements is shared via the <a class="inline-link" href="https://www.linkedin.com/company/informs-quality-statistics-and-reliability-qsr/">QSR LinkedIn page</a>.</p>
+      <p style="font-size: 13px; font-style: italic; color: var(--ink-soft); margin-top: 20px;">Member spotlights and ongoing updates are shared via the <a class="inline-link" href="https://www.linkedin.com/company/informs-quality-statistics-and-reliability-qsr/">QSR LinkedIn page</a>.</p>
     </section>
 
     <!-- ============ §5 CFP ============ -->
@@ -1165,6 +1277,47 @@
       <p style="font-size: 13px; color: var(--ink-soft); font-style: italic; margin-top: 32px;">For Section leadership, advisory board, sponsors, and full activity reports, see the QSR Connect page.</p>
     </section>
 
+    <!-- ============ §7 SPONSORS ============ -->
+    <section id="sponsors">
+      <div class="section-num">§ 07 &mdash; Acknowledgments</div>
+      <h2>Our <em>sponsors</em></h2>
+
+      <p class="lede">The QSR Section gratefully acknowledges the generous support of our department and individual sponsors, whose contributions make our competitions, awards, webinars, and events possible.</p>
+
+      <div class="tbd-block">
+        Placeholder section &mdash; update with this year&rsquo;s confirmed sponsors: department logos, individual sponsor names, and tier placements. Drop logo images into the placeholders below (replace the text inside each box, or add an <code>&lt;img&gt;</code>).
+      </div>
+
+      <div class="sponsor-tier">
+        <div class="sponsor-tier-label">Silver Level <span class="sponsor-tier-amount">$1,500</span></div>
+        <div class="sponsor-grid">
+          <div class="sponsor-logo">Sponsor logo<br>placeholder</div>
+          <div class="sponsor-logo">Sponsor logo<br>placeholder</div>
+          <div class="sponsor-logo">Sponsor logo<br>placeholder</div>
+        </div>
+      </div>
+
+      <div class="sponsor-tier">
+        <div class="sponsor-tier-label">Bronze Level <span class="sponsor-tier-amount">$500</span></div>
+        <div class="sponsor-grid">
+          <div class="sponsor-logo">Sponsor logo<br>placeholder</div>
+          <div class="sponsor-logo">Sponsor logo<br>placeholder</div>
+          <div class="sponsor-logo">Sponsor logo<br>placeholder</div>
+          <div class="sponsor-logo">Sponsor logo<br>placeholder</div>
+        </div>
+      </div>
+
+      <div class="sponsor-tier">
+        <div class="sponsor-tier-label">Individual Sponsors</div>
+        <div class="sponsor-individual">
+          <span>Sponsor name &mdash; placeholder</span>
+          <span>Sponsor name &mdash; placeholder</span>
+        </div>
+      </div>
+
+      <p style="font-size: 14px; color: var(--ink-soft); font-style: italic; margin-top: 24px;">Interested in sponsoring QSR? Reach out to the QSR Fundraising Subcommittee via the <a class="inline-link" href="https://connect.informs.org/qsr/">QSR Section page</a>.</p>
+    </section>
+
   </main>
 </div>
 
@@ -1173,6 +1326,7 @@
   <a href="https://www.ds.cityu.edu.hk/icqsr2026/">ICQSR 2026</a> ·
   <a href="https://connect.informs.org/qsr/">QSR Section</a> ·
   <a href="https://www.linkedin.com/company/informs-quality-statistics-and-reliability-qsr/">LinkedIn</a>
+  <div class="footer-credit">Designed &amp; developed by Jungmin Kim, PhD student, Rutgers University</div>
 </footer>
 
 <script>
