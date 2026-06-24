@@ -550,6 +550,31 @@
     border-color: var(--gold);
   }
 
+  /* upcoming (date known, but still far off) */
+  .deadline-badge.upcoming {
+    color: var(--ink-soft);
+    border-color: var(--rule);
+  }
+
+  /* deadline has passed */
+  .deadline-badge.passed {
+    color: var(--ink-soft);
+    border-color: var(--rule);
+    background: transparent;
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+
+  /* tiny relative-time caption shown under urgent/soon badges */
+  .deadline-sub {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    margin-top: 3px;
+    opacity: 0.85;
+    text-transform: uppercase;
+  }
+
   /* ============ TIMELINE ============ */
   .timeline {
     margin: 24px 0;
@@ -576,6 +601,9 @@
 
   .timeline-item.urgent::before { background: var(--urgent); border-color: var(--urgent); }
   .timeline-item.major::before { background: var(--accent); border-color: var(--accent); }
+  .timeline-item.passed::before { background: var(--rule); border-color: var(--rule); }
+  .timeline-item.passed { opacity: 0.5; }
+  .timeline-item.passed .timeline-event { text-decoration: line-through; }
 
   .timeline-date {
     font-family: 'JetBrains Mono', monospace;
@@ -661,6 +689,16 @@
   .cfp-deadline {
     font-family: 'JetBrains Mono', monospace;
     font-weight: 500;
+  }
+
+  .cfp-deadline.urgent { color: var(--urgent); }
+  .cfp-deadline.passed { color: var(--ink-soft); text-decoration: line-through; opacity: 0.65; }
+  .cfp-deadline .cfp-relative {
+    font-weight: 400;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 6px;
+    opacity: 0.8;
   }
 
   /* ============ PULL QUOTE ============ */
@@ -972,7 +1010,7 @@
           <div class="comp-name"><a href="https://www.ds.cityu.edu.hk/icqsr2026/best-paper.html">Best Paper Competition</a></div>
           <div class="comp-desc">Chaired by Heeyoung Kim (KAIST). Finalists eligible for expedited review at IISE Transactions DSQR.</div>
         </div>
-        <div class="deadline-badge urgent">May 8</div>
+        <div class="deadline-badge" data-deadline="2026-05-08">May 8</div>
       </div>
 
       <div class="comp-row">
@@ -981,7 +1019,7 @@
           <div class="comp-name"><a href="https://www.ds.cityu.edu.hk/icqsr2026/data-challenge.html">Data to Clean Power</a></div>
           <div class="comp-desc">Wind turbine forecasting across two wind farms. Organized by Yanting Li (SJTU), Sukjoo Bae (Hanyang), Chen Zhang (Tsinghua).</div>
         </div>
-        <div class="deadline-badge urgent">May 30</div>
+        <div class="deadline-badge" data-deadline="2026-05-30">May 30</div>
       </div>
 
       <div class="comp-row">
@@ -990,28 +1028,28 @@
           <div class="comp-name"><a href="https://www.ds.cityu.edu.hk/icqsr2026/colloquium.html">Future Faculty Colloquium</a></div>
           <div class="comp-desc">For PhD candidates graduating by Spring 2028 and postdocs. Co-chairs: Yong Chen (Iowa), Jiaman Wu (CityU HK).</div>
         </div>
-        <div class="deadline-badge soon">Jun 22</div>
+        <div class="deadline-badge" data-deadline="2026-06-22">Jun 22</div>
       </div>
 
       <h3>Key dates</h3>
       <div class="timeline">
-        <div class="timeline-item urgent">
+        <div class="timeline-item" data-deadline="2026-05-08">
           <div class="timeline-date">May 8, 2026</div>
           <div class="timeline-event">Best Paper Competition — submission deadline</div>
         </div>
-        <div class="timeline-item urgent">
+        <div class="timeline-item" data-deadline="2026-05-30">
           <div class="timeline-date">May 30, 2026</div>
           <div class="timeline-event">Data Challenge — registration deadline</div>
         </div>
-        <div class="timeline-item major">
+        <div class="timeline-item major" data-deadline="2026-06-15">
           <div class="timeline-date">June 15, 2026</div>
           <div class="timeline-event">Early Bird Registration deadline</div>
         </div>
-        <div class="timeline-item">
+        <div class="timeline-item" data-deadline="2026-06-22">
           <div class="timeline-date">June 22, 2026</div>
           <div class="timeline-event">Future Faculty Colloquium — application deadline</div>
         </div>
-        <div class="timeline-item major">
+        <div class="timeline-item major" data-deadline="2026-07-09">
           <div class="timeline-date">July 5–9, 2026</div>
           <div class="timeline-event">ICQSR 2026 in Hong Kong</div>
         </div>
@@ -1056,7 +1094,7 @@
           <div class="comp-name"><a href="https://connect.informs.org/discussion/call-for-papers-informs-2026-qsr-best-student-paper-competition">QSR Best Student Paper Competition</a></div>
           <div class="comp-desc">Four finalists present at a special session; winner receives a plaque. Co-chairs: Bo Shen (NJIT), Cesar Ruiz Torres (U. Oklahoma), Jianxin Xie (U. Virginia). Decisions by Sep 28.</div>
         </div>
-        <div class="deadline-badge urgent">Jul 12</div>
+        <div class="deadline-badge" data-deadline="2026-07-12">Jul 12</div>
       </div>
 
       <div class="comp-row">
@@ -1065,7 +1103,7 @@
           <div class="comp-name"><a href="https://connect.informs.org/discussion/call-for-nominations-informs-2026-quality-statistics-and-reliability-teaching-award">QSR Teaching Award</a></div>
           <div class="comp-desc">Recognizes excellence in teaching quality, statistics, and reliability courses. Nominations by a colleague or student. Committee chairs: Bo Shen (NJIT), Dan Li (UW), Sahand Hajifar (Park). Winner notified Oct 2.</div>
         </div>
-        <div class="deadline-badge soon">Aug 14</div>
+        <div class="deadline-badge" data-deadline="2026-08-14">Aug 14</div>
       </div>
 
       <div class="comp-row">
@@ -1215,7 +1253,7 @@
         <div class="cfp-title">Digital Twin for the Advancement of Design and Manufacturing</div>
         <div style="font-size: 13px; color: var(--ink-soft);">Issue Editors: Chenang Liu, Michel-Alexandre Cardin, Jingshan Li, Debjit Roy, Chenhui Shao</div>
         <div class="cfp-meta">
-          <span class="cfp-deadline">↓ March 1, 2026</span>
+          <span class="cfp-deadline" data-deadline="2026-03-01">↓ March 1, 2026</span>
           <a href="https://lnkd.in/eMfbMeMW" class="inline-link" style="font-style: italic;">View call →</a>
         </div>
       </div>
@@ -1225,7 +1263,7 @@
         <div class="cfp-title">Data Science for Computational Modeling, Design, Uncertainty Quantification, and Optimization</div>
         <div style="font-size: 13px; color: var(--ink-soft);">Issue Editors: Rui Tuo, Lulu Kang, Xiao Liu, Özge Sürer</div>
         <div class="cfp-meta">
-          <span class="cfp-deadline">↓ March 31, 2026</span>
+          <span class="cfp-deadline" data-deadline="2026-03-31">↓ March 31, 2026</span>
           <a href="https://lnkd.in/e_8wBb4u" class="inline-link" style="font-style: italic;">View call →</a>
         </div>
       </div>
@@ -1237,7 +1275,7 @@
         <div class="cfp-title">The Dual Edge of AI: Catalyzing and Challenging the Future of Energy Systems</div>
         <div style="font-size: 13px; color: var(--ink-soft);">Guest Editors: Ahmed Aziz Ezzat, Merve Bodur, Ramteen Sioshansi, Zijun Zhang, Shixiang (Woody) Zhu</div>
         <div class="cfp-meta">
-          <span class="cfp-deadline">↓ May 1, 2026</span>
+          <span class="cfp-deadline" data-deadline="2026-05-01">↓ May 1, 2026</span>
           <a href="https://pubsonline.informs.org/doi/10.1287/ijds.2026.cfp.v05.n1" class="inline-link" style="font-style: italic;">View call →</a>
         </div>
       </div>
@@ -1401,6 +1439,81 @@
     });
   }, { rootMargin: '-20% 0px -70% 0px' });
   sections.forEach(s => observer.observe(s));
+
+  // ============ AUTO DEADLINE STATUS (driven by system date) ============
+  // Single source of truth = the data-deadline="YYYY-MM-DD" attribute on each
+  // .deadline-badge, .timeline-item, and .cfp-deadline. Colors/strikethrough are
+  // computed from today's date, so nothing needs manual updating over time.
+  (function () {
+    const URGENT_DAYS = 21;   // <= this many days remaining → red "urgent"
+    const SOON_DAYS   = 60;   // <= this many days remaining → gold "soon"
+    const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    function parseDate(str) {
+      // Parse as local midnight to avoid UTC off-by-one
+      const [y, m, d] = str.split('-').map(Number);
+      return new Date(y, m - 1, d);
+    }
+    function daysUntil(str) {
+      return Math.round((parseDate(str) - today) / 86400000);
+    }
+    function relLabel(days) {
+      if (days < 0)  return Math.abs(days) + 'd ago';
+      if (days === 0) return 'today';
+      if (days === 1) return '1d left';
+      return days + 'd left';
+    }
+
+    // --- Deadline badges: auto text (short date) + auto color + relative caption ---
+    document.querySelectorAll('.deadline-badge[data-deadline]').forEach(function (el) {
+      const ds = el.getAttribute('data-deadline');
+      const days = daysUntil(ds);
+      const d = parseDate(ds);
+      const short = MONTHS[d.getMonth()] + ' ' + d.getDate();
+
+      el.classList.remove('urgent', 'soon', 'upcoming', 'passed');
+      let state;
+      if (days < 0)               state = 'passed';
+      else if (days <= URGENT_DAYS) state = 'urgent';
+      else if (days <= SOON_DAYS)   state = 'soon';
+      else                          state = 'upcoming';
+      el.classList.add(state);
+
+      // rebuild content: short date + small relative-time caption
+      el.innerHTML = short + '<span class="deadline-sub">' + relLabel(days) + '</span>';
+      el.setAttribute('title', short + ' — ' + relLabel(days));
+    });
+
+    // --- Timeline items: recolor dot + strike past events (keep .major styling) ---
+    document.querySelectorAll('.timeline-item[data-deadline]').forEach(function (el) {
+      const days = daysUntil(el.getAttribute('data-deadline'));
+      el.classList.remove('urgent', 'passed');
+      if (days < 0) {
+        el.classList.add('passed');
+      } else if (days <= URGENT_DAYS && !el.classList.contains('major')) {
+        el.classList.add('urgent');
+      }
+    });
+
+    // --- CFP deadlines: strike if passed, redden if closing soon, add relative note ---
+    document.querySelectorAll('.cfp-deadline[data-deadline]').forEach(function (el) {
+      const days = daysUntil(el.getAttribute('data-deadline'));
+      el.classList.remove('urgent', 'passed');
+      // strip any previously-added relative note before re-adding
+      const old = el.querySelector('.cfp-relative');
+      if (old) old.remove();
+
+      let note;
+      if (days < 0) { el.classList.add('passed'); note = '(closed)'; }
+      else if (days <= URGENT_DAYS) { el.classList.add('urgent'); note = '(' + relLabel(days) + ')'; }
+      else { note = '(' + relLabel(days) + ')'; }
+      el.insertAdjacentHTML('beforeend', '<span class="cfp-relative">' + note + '</span>');
+    });
+  })();
+
 </script>
 
 </body>
