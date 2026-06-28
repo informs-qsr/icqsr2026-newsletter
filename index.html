@@ -437,6 +437,19 @@
     margin: 16px 0 24px;
   }
 
+  /* Board roster: fixed 4-per-row so every card (and photo) is the same size,
+     no matter how many people are in each group */
+  .board-grid {
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: start;
+  }
+  @media (max-width: 900px) {
+    .board-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .board-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
   .keynote-mini {
     display: flex;
     flex-direction: column;
