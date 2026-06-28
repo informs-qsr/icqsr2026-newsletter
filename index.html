@@ -1477,17 +1477,29 @@
 
   // ============ TOC ACTIVE STATE ============
   const tocLinks = document.querySelectorAll('.toc a');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        tocLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-        });
-      }
+
+  function updateActiveTOC() {
+    const line = window.innerHeight * 0.3;         
+    let activeId = sections[0].id;
+
+    const atBottom = window.innerHeight + window.scrollY
+                     >= document.documentElement.scrollHeight - 2;
+    if (atBottom) {
+      activeId = sections[sections.length - 1].id;
+    } else {
+      sections.forEach(sec => {
+        if (sec.getBoundingClientRect().top <= line) activeId = sec.id;
+      });
+    }
+
+    tocLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + activeId);
     });
-  }, { rootMargin: '-20% 0px -70% 0px' });
-  sections.forEach(s => observer.observe(s));
+  }
+
+  updateActiveTOC();
+  window.addEventListener('scroll', updateActiveTOC, { passive: true });
+  window.addEventListener('resize', updateActiveTOC);
 
   // ============ AUTO DEADLINE STATUS (driven by system date) ============
   // Single source of truth = the data-deadline="YYYY-MM-DD" attribute on each
